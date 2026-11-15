@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_debt_name">Hutang Piutang</string>
+    <string name="widget_debt_desc">Ringkasan hutang dan piutang di layar utama</string>
+    <string name="widget_savings_name">Tabungan</string>
+    <string name="widget_savings_desc">Progres tujuan tabungan di layar utama</string>
+    <string name="widget_money_name">Uang</string>
+    <string name="widget_money_desc">Saldo uang tunai dan riwayat terakhirnya di layar utama</string>
+</resources>
