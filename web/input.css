@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body { height: 100%; background: #000; overscroll-behavior: none; }
+  body { -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-select: none; font-variant-numeric: tabular-nums; }
+  input { user-select: text; -webkit-user-select: text; }
+  ::-webkit-scrollbar { display: none; }
+}
+
+@layer components {
+  /* Kapsul navigasi: zinc 20% dengan blur sungguhan (WebView mendukung backdrop-filter) */
+  .glass {
+    background: rgba(24, 24, 27, 0.2); /* zinc-900 pada 20% */
+    border: 1px solid rgba(24, 24, 27, 0.3);
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+  }
+  .press { transition: transform .18s cubic-bezier(.2,.9,.25,1.4), background-color .2s, border-color .2s, opacity .2s; }
+  .press:active { transform: scale(.95); }
+  .card { background: linear-gradient(160deg, #101018 0%, #0A0A10 100%); border: 1px solid #1B2744; border-radius: 18px; }
+  .screen.off { visibility: hidden; pointer-events: none; }
+  .field { width: 100%; background: #0D0D12; border: 1px solid #1B2744; border-radius: 14px; padding: 13px 14px 13px 40px; color: #fff; outline: none; transition: border-color .2s, box-shadow .2s; font-size: 15px; }
+  .field:focus { border-color: #2979FF; box-shadow: 0 0 0 3px rgba(41,121,255,.22); }
+  .field { color-scheme: dark; }
+  .field::placeholder { color: #8A94A8; }
+  .pill-anim { transition: transform .5s cubic-bezier(.3,1.25,.45,1), width .5s cubic-bezier(.3,1.25,.45,1); }
+}
