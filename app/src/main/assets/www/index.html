@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <title>Keuangan</title>
+  <!-- Keduanya dibuat/disalin saat build oleh workflow (lihat README), tidak ikut di repo -->
+  <link rel="stylesheet" href="tailwind.css">
+  <link rel="stylesheet" href="fa/css/all.min.css">
+</head>
+<body class="bg-ink font-sans text-white">
+  <div id="app" class="relative h-full w-full overflow-hidden">
+
+    <!-- layar masuk -->
+    <div id="auth" class="absolute inset-0 hidden overflow-y-auto px-7"></div>
+
+    <!-- layar utama -->
+    <div id="main" class="absolute inset-0 hidden">
+      <header class="relative z-10 flex items-center px-[18px] pb-2 pt-5">
+        <div class="min-w-0 flex-1">
+          <h1 id="appname" class="text-[28px] font-bold leading-tight tracking-tight"></h1>
+          <p id="email" class="truncate text-[13px] text-mute"></p>
+        </div>
+        <button id="sync" class="press mr-1 flex h-10 items-center gap-2 rounded-full px-3 text-[13px] font-semibold text-brandlt">
+          <i id="syncicon" class="fa-solid fa-rotate"></i> Sinkron
+        </button>
+        <button id="logout" class="press flex h-10 items-center gap-2 rounded-full px-3 text-[13px] font-semibold text-mute">
+          <i class="fa-solid fa-right-from-bracket"></i> Keluar
+        </button>
+      </header>
+
+      <div id="screens" class="absolute inset-x-0 bottom-0 top-[76px]">
+        <section id="s0" class="screen absolute inset-0 overflow-y-auto px-[18px] pb-[170px] pt-1"></section>
+        <section id="s1" class="screen off absolute inset-0 overflow-y-auto px-[18px] pb-[170px] pt-1"></section>
+        <section id="s2" class="screen off absolute inset-0 overflow-y-auto px-[18px] pb-[170px] pt-1"></section>
+      </div>
+
+      <button id="fab" aria-label="Tambah" class="press absolute bottom-[92px] right-[22px] z-20 flex h-[60px] w-[60px] animate-ring items-center justify-center rounded-full bg-brand text-[24px] text-white shadow-lg shadow-brand/40">
+        <i id="fabicon" class="fa-solid fa-plus transition-transform duration-500"></i>
+      </button>
+
+      <nav id="nav" class="glass absolute inset-x-[18px] bottom-[18px] z-20 rounded-[40px] p-1.5">
+        <div id="pill" class="absolute bottom-1.5 left-0 top-1.5 rounded-[32px] bg-brand shadow-lg shadow-brand/40" style="width:0"></div>
+        <div id="navrow" class="relative z-10 flex items-center">
+          <button class="nav press flex flex-col items-center justify-center gap-1 whitespace-nowrap rounded-[32px] py-2 text-[11px] font-semibold leading-none transition-colors duration-300" style="flex:1.5"><i class="fa-solid fa-hand-holding-dollar text-[17px]"></i>Hutang Piutang</button>
+          <button class="nav press flex flex-col items-center justify-center gap-1 whitespace-nowrap rounded-[32px] py-2 text-[11px] font-semibold leading-none transition-colors duration-300" style="flex:1"><i class="fa-solid fa-piggy-bank text-[17px]"></i>Tabungan</button>
+          <button class="nav press flex flex-col items-center justify-center gap-1 whitespace-nowrap rounded-[32px] py-2 text-[11px] font-semibold leading-none transition-colors duration-300" style="flex:.8"><i class="fa-solid fa-wallet text-[17px]"></i>Tunai</button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- lapisan untuk sheet dan toast -->
+    <div id="layer" class="pointer-events-none absolute inset-0 z-40"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
